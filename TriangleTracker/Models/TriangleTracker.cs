@@ -30,7 +30,31 @@ namespace Tracker
       }
       return false; 
     }
+
+    public bool IsEquilateral()
+    {
+      if ((Side1 == Side2) && (Side2 == Side3) && (Side1 == Side3))
+      {
+        return true;
+      }
+      return false;
+    }
+
+    public string TriangleChecker()
+    {
+      if (!IsTriangle())
+      {
+        return "This is not a triangle";
+      }
+      else if (IsScalene())
+      {
+        return "This is a Scalene Triangle";
+      }
+      else if (IsEquilateral())
+      {
+        return "This is an Equilateral Triangle";
+      }
+      return "This is an Isosceles Triangle";
+    }
   }
 }
-
-// ((Side1 == Side2) && (Side2 == Side3) && (Side1 == Side3))
