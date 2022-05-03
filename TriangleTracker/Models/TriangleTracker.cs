@@ -22,5 +22,15 @@ namespace Tracker
       }
       return true;
     }
+    public bool IsScalene()
+    {
+      if ((Side1 != Side3) && (Side2 != Side3) && (Side1 != Side2))
+      {
+        return true;
+      }
+      return false; 
+    }
   }
 }
+
+// ((Side1 == Side2) && (Side2 == Side3) && (Side1 == Side3))

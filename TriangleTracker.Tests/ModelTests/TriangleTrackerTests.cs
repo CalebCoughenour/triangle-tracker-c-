@@ -18,5 +18,11 @@ namespace Tracker.Tests
       Triangle testTriangle = new Triangle(2, 2, 5);
       Assert.AreEqual(false, testTriangle.IsTriangle());
     }
+    [TestMethod]
+    public void IsScalene_ChecksAllThreeSides_True()
+    {
+      Triangle testTriangle = new Triangle(2, 3, 5);
+      Assert.AreEqual(true, testTriangle.IsScalene());
+    }
   }
 }
