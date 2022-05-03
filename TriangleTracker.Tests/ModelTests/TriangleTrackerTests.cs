@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Triangle;
+using Tracker;
 
 namespace Tracker.Tests
 {
@@ -9,8 +9,14 @@ namespace Tracker.Tests
     [TestMethod]
     public void IsTriangle_ChecksAllThreeSides_True()
     {
-      Triangle testTriangle = new Triangle();
+      Triangle testTriangle = new Triangle(2, 2, 2);
       Assert.AreEqual(true, testTriangle.IsTriangle());
+    }
+    [TestMethod]
+    public void IsTriangle_ChecksAllThreeSides_False()
+    {
+      Triangle testTriangle = new Triangle(2, 2, 5);
+      Assert.AreEqual(false, testTriangle.IsTriangle());
     }
   }
 }
