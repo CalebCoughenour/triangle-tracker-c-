@@ -1,16 +1,21 @@
-using System;
-using System.Collections.Generic;
-using Tracker;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using TriangleTracker.Models;
 
-public class Program {
-  public static void Main() {
-    Console.WriteLine("Please Enter Triangle Side 1");
-    int Side1 = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Please Enter Triangle Side 2");
-    int Side2 = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Please Enter Triangle Side 3");
-    int Side3 = Convert.ToInt32(Console.ReadLine());
-    Triangle newTriangle = new Triangle(Side1, Side2, Side3);
-    Console.WriteLine(newTriangle.TriangleChecker());
+namespace TriangleTracker
+{
+  public class Program
+  {
+    public static void Main(string[] args)
+    {
+      var host = new WebHostBuilder()
+        .UseKestrel()
+        .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseIISIntegration()
+        .UseStartup<Startup>()
+        .Build();
+
+      host.Run();
+    }
   }
 }
